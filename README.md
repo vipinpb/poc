@@ -35,6 +35,9 @@ Use the Graph QL client
 
 http://localhost:4000/graphql
 
+or GraphIQL
+http://localhost:4000/graphiql
+
 you should see 3 services
 
 1. me

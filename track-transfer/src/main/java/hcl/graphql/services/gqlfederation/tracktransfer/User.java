@@ -5,12 +5,10 @@ import java.util.Objects;
 
 public class User {
 
-    private final String id;
+    private String id;
     private String username;
    
-    public User(final String id) {
-        this.id = id;
-    }
+    public User() {}
 
     public User(final String id, final String username) {
         this.id = id;

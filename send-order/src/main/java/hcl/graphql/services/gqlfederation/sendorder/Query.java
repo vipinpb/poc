@@ -1,4 +1,4 @@
-package hcl.graphql.services.gqlfederation.sendmoney;
+package hcl.graphql.services.gqlfederation.sendorder;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import graphql.schema.DataFetchingEnvironment;

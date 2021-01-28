@@ -1,4 +1,4 @@
-package hcl.graphql.services.gqlfederation.sendmoney;
+package hcl.graphql.services.gqlfederation.sendorder;
 
 import com.apollographql.federation.graphqljava.Federation;
 import com.apollographql.federation.graphqljava._Entity;

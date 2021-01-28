@@ -7,6 +7,8 @@ public class MoneyTransfer {
     private Order order;
     private User user;
     
+	public MoneyTransfer() {}
+	
 	public String getStatus() {
 		return status;
 	}

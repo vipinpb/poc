@@ -1,4 +1,4 @@
-package hcl.graphql.services.gqlfederation.sendmoney;
+package hcl.graphql.services.gqlfederation.sendorder;
 
 public class Address {
 
@@ -6,6 +6,7 @@ public class Address {
     private String city;
     private String country;
 
+    public Address() {}
     public Address(final Long id, final String city, final String country) {
         this.id = id;
         this.city = city;

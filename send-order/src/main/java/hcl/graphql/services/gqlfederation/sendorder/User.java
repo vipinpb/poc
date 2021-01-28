@@ -1,4 +1,4 @@
-package hcl.graphql.services.gqlfederation.sendmoney;
+package hcl.graphql.services.gqlfederation.sendorder;
 
 import java.util.List;
 import java.util.Objects;
@@ -6,14 +6,12 @@ import java.util.Objects;
 
 public class User {
 
-    private final String id;
+    private String id;
     private String name;
     private String username;
     private List<Order> orders;
 
-    public User(final String id) {
-        this.id = id;
-    }
+    public User() {}
 
     public User(final String id, final String username) {
         this.id = id;
@@ -76,4 +74,11 @@ public class User {
     public int hashCode() {
         return Objects.hash(id, name, username);
     }
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", username=" + username + ", orders=" + orders + "]";
+	}
+    
+    
 }

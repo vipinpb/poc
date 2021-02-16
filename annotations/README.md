@@ -4,13 +4,14 @@ This module contains process to generate the schema
 
 - Generate the schema using following annotation
 
-oracle.monitoring.annotation.graphql.VGraphQLArgument
+hcl.annotation.graphql.VGraphQLArgument
 
-oracle.monitoring.annotation.graphql.VGraphQLQuery
+hcl.annotation.graphql.VGraphQLQuery
 
-oracle.monitoring.annotation.graphql.VGraphQLType
+hcl.annotation.graphql.VGraphQLType
 
 use JDK 1.8+
 
 to generate the schema run the following command
+go to annotations-user project
 mvn clean compile

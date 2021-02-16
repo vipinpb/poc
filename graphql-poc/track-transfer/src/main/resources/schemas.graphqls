@@ -1,0 +1,20 @@
+type Query {
+    tracktransfer(mtcn: String!): MoneyTransfer
+}
+
+type MoneyTransfer @key(fields: "mtcn") {
+    mtcn: String!
+    status: String
+    order: Order @provides(fields: "amount")
+    user: User @provides(fields: "username")
+}
+
+type Order @key(fields: "id") @extends {
+    id: ID! @external
+    amount: String @external
+}
+
+type User @key(fields: "id") @extends {
+    id: ID! @external
+    username: String @external
+}

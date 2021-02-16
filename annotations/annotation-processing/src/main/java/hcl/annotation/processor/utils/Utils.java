@@ -1,4 +1,4 @@
-package oracle.monitoring.annotation.processor.utils;
+package hcl.annotation.processor.utils;
 
 public abstract class Utils {
     public static String join(Iterable<?> elements) {

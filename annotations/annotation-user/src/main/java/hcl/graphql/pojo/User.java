@@ -1,9 +1,9 @@
 /**
  * 
  */
-package oracle.monitoring.graphql.pojo;
+package hcl.graphql.pojo;
 
-import oracle.monitoring.annotation.graphql.VGraphQLType;
+import hcl.annotation.graphql.VGraphQLType;
 
 /**
  * @author vipink

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package oracle.monitoring.annotation.processor;
+package hcl.annotation.processor;
 
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -39,22 +39,23 @@ import javax.lang.model.util.ElementScanner6;
 import javax.lang.model.util.ElementScanner8;
 import javax.tools.Diagnostic;
 import javax.tools.Diagnostic.Kind;
+
+import hcl.annotation.graphql.VGraphQLQuery;
+import hcl.annotation.graphql.VGraphQLType;
+import hcl.annotation.processor.graphql.Param;
+import hcl.annotation.processor.graphql.QueryInfo;
+
 import javax.tools.FileObject;
 import javax.tools.StandardLocation;
-
-import oracle.monitoring.annotation.graphql.VGraphQLQuery;
-import oracle.monitoring.annotation.graphql.VGraphQLType;
-import oracle.monitoring.annotation.processor.graphql.Param;
-import oracle.monitoring.annotation.processor.graphql.QueryInfo;
 
 /**
  * @author vipink
  *
  */
 @SupportedAnnotationTypes({
-		"oracle.monitoring.annotation.graphql.VGraphQLArgument",
-		"oracle.monitoring.annotation.graphql.VGraphQLQuery",
-		"oracle.monitoring.annotation.graphql.VGraphQLType" })
+		"hcl.annotation.graphql.VGraphQLArgument",
+		"hcl.annotation.graphql.VGraphQLQuery",
+		"hcl.annotation.graphql.VGraphQLType" })
 public class GraphQLProcessor extends AbstractProcessor {
 
 	

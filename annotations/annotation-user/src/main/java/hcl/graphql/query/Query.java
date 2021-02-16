@@ -1,12 +1,12 @@
 /**
  * 
  */
-package oracle.monitoring.graphql.query;
+package hcl.graphql.query;
 
-import oracle.monitoring.annotation.graphql.VGraphQLArgument;
-import oracle.monitoring.annotation.graphql.VGraphQLQuery;
-import oracle.monitoring.graphql.pojo.Order;
-import oracle.monitoring.graphql.pojo.User;
+import hcl.annotation.graphql.VGraphQLArgument;
+import hcl.annotation.graphql.VGraphQLQuery;
+import hcl.graphql.pojo.Order;
+import hcl.graphql.pojo.User;
 
 /**
  * @author vipink

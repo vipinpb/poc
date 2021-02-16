@@ -1,7 +1,7 @@
 /**
  * 
  */
-package oracle.monitoring.annotation.graphql;
+package hcl.annotation.graphql;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package oracle.monitoring.annotation.processor.graphql;
+package hcl.annotation.processor.graphql;
 
 import java.util.ArrayList;
 import java.util.List;

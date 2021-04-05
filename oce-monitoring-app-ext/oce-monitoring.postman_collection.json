@@ -1,0 +1,800 @@
+{
+	"info": {
+		"_postman_id": "f4334c86-77b3-4328-961d-3df37d9cace0",
+		"name": "monitoring",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "testing",
+			"item": [
+				{
+					"name": "api/v1/test/generate-alerts (This would generate the real alerts adding load)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{APP_BASE_URL}}/api/v1/test/generate-alerts",
+							"host": [
+								"{{APP_BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"test",
+								"generate-alerts"
+							]
+						},
+						"description": "This is to generate the alerts by adding various different request"
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/test/generate-cpuload (This would generate cpu load)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/test/generate-cpuload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"test",
+								"generate-cpuload"
+							]
+						},
+						"description": "This is to generate the alerts by adding various different request"
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/test/load-heap (This would add strings to heap)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{APP_BASE_URL}}/api/v1/test/load-heap",
+							"host": [
+								"{{APP_BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"test",
+								"load-heap"
+							]
+						},
+						"description": "This is to generate the alerts by adding various different request"
+					},
+					"response": []
+				},
+				{
+					"name": "/api/v1/test/generate/fakealerts (Generate Fake alerts)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/test/generate/fakealerts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"test",
+								"generate",
+								"fakealerts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/v1/test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{APP_BASE_URL}}/api/v1/test",
+							"host": [
+								"{{APP_BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"test"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "source",
+					"item": [
+						{
+							"name": "/api/v1/sources (List all the metric sources)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{APP_BASE_URL}}/api/v1/sources",
+									"host": [
+										"{{APP_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sources"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/sources (Add a metric source )",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"WLS-Exporter\",\r\n    \"description\": \"WLS-Exporter\",\r\n    \"classname\": \"oracle.monitoring.source.OCEWlsMetricSource\",\r\n    \"configuration\": \"WLS-Exporter\",\r\n    \"id\": 10\r\n}"
+								},
+								"url": {
+									"raw": "{{APP_BASE_URL}}/api/v1/sources",
+									"host": [
+										"{{APP_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sources"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/schedular (List all the metric source schedule )",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{APP_BASE_URL}}/api/v1/schedular",
+									"host": [
+										"{{APP_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"schedular"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/schedular (Add a metric schedular for a metric source)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"thread\": \"WLS-Exporter\",\r\n    \"schedule\": \"1000\",\r\n    \"sourceId\": 10,\r\n    \"id\": 10\r\n}"
+								},
+								"url": {
+									"raw": "{{APP_BASE_URL}}/api/v1/schedular",
+									"host": [
+										"{{APP_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"schedular"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/schedular/start (Start a metric source schedular)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_BASE_URL}}/api/v1/schedular/start",
+									"host": [
+										"{{APP_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"schedular",
+										"start"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "2",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/schedular/startall (Start all metric source schedular)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_BASE_URL}}/api/v1/schedular/startall",
+									"host": [
+										"{{APP_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"schedular",
+										"startall"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/schedular/stop (Stop a metric source schedular)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_BASE_URL}}/api/v1/schedular/stop",
+									"host": [
+										"{{APP_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"schedular",
+										"stop"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/schedular/stopall (Stop all metric source schedular)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "2",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_BASE_URL}}/api/v1/schedular/stopall",
+									"host": [
+										"{{APP_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"schedular",
+										"stopall"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/schedular/start-rule-engine",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "2",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_BASE_URL}}/api/v1/schedular/start-rule-engine",
+									"host": [
+										"{{APP_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"schedular",
+										"start-rule-engine"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/schedular/startAllServices (Start all services)",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "2",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_BASE_URL}}/api/v1/schedular/startAllServices",
+									"host": [
+										"{{APP_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"schedular",
+										"startAllServices"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/schedular/stop-rule-engine",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "2",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{APP_BASE_URL}}/api/v1/schedular/stop-rule-engine",
+									"host": [
+										"{{APP_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"schedular",
+										"stop-rule-engine"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "List all metric source actions"
+				},
+				{
+					"name": "tsdb",
+					"item": [
+						{
+							"name": "/api/v1/metrics (List all available metrics )",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{APP_BASE_URL}}/api/v1/metrics?offset=0&limit=100",
+									"host": [
+										"{{APP_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"metrics"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/metrics/{matrics-name} (Find a given metric value)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{APP_BASE_URL}}/api/v1/metrics/jvm_threads_peak_threads",
+									"host": [
+										"{{APP_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"metrics",
+										"jvm_threads_peak_threads"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/metrics/query  (Match Metrics)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{APP_BASE_URL}}/api/v1/metrics/query?q=jvm_heap_free_percent > 25 && abc < 10",
+									"host": [
+										"{{APP_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"metrics",
+										"query"
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "jvm_heap_free_percent > 25 "
+										},
+										{
+											"key": null,
+											"value": null
+										},
+										{
+											"key": " abc < 10",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/rules (List All the available rules)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{APP_BASE_URL}}/api/v1/rules",
+									"host": [
+										"{{APP_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"rules"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/rules/evaluateall  (Evaluate all the rules )",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{APP_BASE_URL}}/api/v1/rules/evaluateall",
+									"host": [
+										"{{APP_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"rules",
+										"evaluateall"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/rules/evaluate/{rule-name}",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{APP_BASE_URL}}/api/v1/rules/evaluate/Session",
+									"host": [
+										"{{APP_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"rules",
+										"evaluate",
+										"Session"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/rules/create-and-evaluate",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"id\": 20,\r\n        \"name\": \"MyTestRule\",\r\n        \"type\": \"alert\",\r\n        \"exp\": \"tomcat_sessions_active_current_sessions > 10\",\r\n        \"waitfor\": \"2m\",\r\n        \"sourceId\": 20\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APP_BASE_URL}}/api/v1/rules/create-and-evaluate",
+									"host": [
+										"{{APP_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"rules",
+										"create-and-evaluate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/v1/alerts (List all available metric alerts)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{APP_BASE_URL}}/api/v1/alerts",
+									"host": [
+										"{{APP_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"alerts"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "alert-system",
+					"item": [
+						{
+							"name": "api/v1/monitoring/monitoringalerts( List all the system generated alerts)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{APP_BASE_URL}}/api/v1/monitoring/monitoringalerts",
+									"host": [
+										"{{APP_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"monitoring",
+										"monitoringalerts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/v1/monitoring/consume/{alert-name} ( Consume the alert)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{APP_BASE_URL}}/api/v1/monitoring/consume/Session",
+									"host": [
+										"{{APP_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"monitoring",
+										"consume",
+										"Session"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/v1/monitoring/get/{alert-name}( get a system alert by name)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{APP_BASE_URL}}/api/v1/monitoring/fetch/cpu",
+									"host": [
+										"{{APP_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"monitoring",
+										"fetch",
+										"cpu"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"All the api for monitoring system"
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "APP_BASE_URL",
+			"value": "http://localhost:8080"
+		},
+		{
+			"key": "APP_BASE_URL_1",
+			"value": "http://ssvrint-oracle.vipin-1.cec.oraclecorp.com:8080/monitoring"
+		}
+	]
+}

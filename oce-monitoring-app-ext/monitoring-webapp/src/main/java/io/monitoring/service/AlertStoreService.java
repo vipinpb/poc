@@ -5,8 +5,8 @@ package io.monitoring.service;
 
 import java.util.Optional;
 
-import oracle.monitoring.metrics.Alert;
-import oracle.monitoring.store.service.AlertException;
+import io.monitoring.metrics.Alert;
+import io.monitoring.store.service.AlertException;
 
 /**
  * This provides the storage for the active alerts and also storage for

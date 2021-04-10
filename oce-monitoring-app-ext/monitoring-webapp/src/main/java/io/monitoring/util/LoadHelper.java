@@ -25,8 +25,8 @@ import java.util.stream.Collectors;
 
 import javax.ws.rs.client.WebTarget;
 
-import oracle.monitoring.metrics.Alert;
-import oracle.monitoring.store.service.AlertException;
+import io.monitoring.metrics.Alert;
+import io.monitoring.store.service.AlertException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

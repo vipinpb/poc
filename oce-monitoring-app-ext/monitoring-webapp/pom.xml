@@ -131,7 +131,7 @@
 			<version>1.0</version>
 		</dependency>
 		<dependency>
-			<groupId>oracle.monitoring</groupId>
+			<groupId>io.monitoring</groupId>
 			<artifactId>monitoring-alert-store</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>

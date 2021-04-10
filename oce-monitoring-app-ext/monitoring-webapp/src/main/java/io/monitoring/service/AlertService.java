@@ -4,8 +4,8 @@
 package io.monitoring.service;
 
 import io.monitoring.domain.MetricAlert;
-import oracle.monitoring.metrics.Alert;
-import oracle.monitoring.store.service.AlertException;
+import io.monitoring.metrics.Alert;
+import io.monitoring.store.service.AlertException;
 
 /**
  * This service helps you create the alerts and also let you attach those to the rules.

@@ -13,9 +13,9 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import oracle.monitoring.metrics.Alert;
-import oracle.monitoring.store.service.AlertException;
-import oracle.monitoring.store.service.MonitoringAlertStoreService;
+import io.monitoring.metrics.Alert;
+import io.monitoring.store.service.AlertException;
+import io.monitoring.store.service.MonitoringAlertStoreService;
 
 /**
  * @author vipink

@@ -11,7 +11,7 @@ import io.monitoring.service.AlertService;
 
 import java.util.List;
 
-import oracle.monitoring.metrics.Alert;
+import io.monitoring.metrics.Alert;
 import static io.monitoring.common.Constants.ALERT_LOGGER;
 
 import org.springframework.beans.factory.annotation.Autowired;

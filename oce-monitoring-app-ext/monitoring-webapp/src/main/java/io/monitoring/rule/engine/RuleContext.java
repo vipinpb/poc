@@ -6,7 +6,7 @@ package io.monitoring.rule.engine;
 import io.monitoring.manager.MetricsManager;
 import io.monitoring.manager.RulesManager;
 import io.monitoring.metrics.Row;
-import oracle.monitoring.metrics.Alert;
+import io.monitoring.metrics.Alert;
 
 /**
  * @author vipink

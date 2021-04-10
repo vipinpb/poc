@@ -3,31 +3,27 @@
  */
 package io.monitoring.manager;
 
-import io.monitoring.domain.MetricSchedule;
-import io.monitoring.domain.Source;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import io.monitoring.metrics.Metric;
 import io.monitoring.metrics.MetricsParser;
 import io.monitoring.metrics.Query;
 import io.monitoring.metrics.QueryResponse;
 import io.monitoring.metrics.Record;
 import io.monitoring.metrics.Row;
-import io.monitoring.metrics.Status;
 import io.monitoring.rule.engine.Condition;
 import io.monitoring.rule.engine.ConditionBuilder;
 import io.monitoring.service.MetricScheduleService;
 import io.monitoring.service.MetricService;
 import io.monitoring.service.SourceService;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.stream.Collectors;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 /**
  * @author vipink

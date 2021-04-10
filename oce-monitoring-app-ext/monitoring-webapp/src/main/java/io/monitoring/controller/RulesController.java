@@ -13,7 +13,7 @@ import io.monitoring.service.RuleService;
 
 import java.util.Optional;
 
-import oracle.monitoring.metrics.Alert;
+import io.monitoring.metrics.Alert;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -12,7 +12,7 @@ import io.monitoring.service.RuleService;
 
 import java.util.Optional;
 
-import oracle.monitoring.metrics.Alert;
+import io.monitoring.metrics.Alert;
 
 public interface RulesManager {
 

@@ -1,4 +1,4 @@
-insert into metric_source values(10, 'OCE-Exporter','Weblogic Exporter','oracle.monitoring.source.OCEWlsMetricSource',
+insert into metric_source values(10, 'OCE-Exporter','Weblogic Exporter','io.monitoring.source.OCEWlsMetricSource',
 '{"host":"http://localhost:8080",
   "scrape_uri":"/wls-exporter/metrics",
   "scrape.request-timeout":60,
@@ -6,7 +6,7 @@ insert into metric_source values(10, 'OCE-Exporter','Weblogic Exporter','oracle.
   "auth-token": "weblogic:Welcome1",
   "name": "OCE-Exporter"
 }',false);
-insert into metric_source values(20, 'MonitoringApp-Exporter','Monitoring Exporter','oracle.monitoring.source.MonitoringAppMetricSource',
+insert into metric_source values(20, 'MonitoringApp-Exporter','Monitoring Exporter','io.monitoring.source.MonitoringAppMetricSource',
 '{"host":"http://localhost:8080",
   "scrape_uri":"/actuator/prometheus",
   "scrape.request-timeout":60,

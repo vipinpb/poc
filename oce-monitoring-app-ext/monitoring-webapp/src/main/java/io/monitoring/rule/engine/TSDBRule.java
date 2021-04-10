@@ -6,7 +6,7 @@ import io.monitoring.service.impl.RuleHelper;
 import java.io.Serializable;
 import java.util.Optional;
 
-import oracle.monitoring.metrics.Alert;
+import io.monitoring.metrics.Alert;
 
 public class TSDBRule implements Serializable, IRule {
 	/**
